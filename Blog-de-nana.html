@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Le blog de Nana</title>
+  <style>
+    body {
+      background: url('https://www.toptal.com/designers/subtlepatterns/patterns/stardust.png');
+      color: hotpink;
+      font-family: "Comic Sans MS", cursive;
+      margin: 0;
+      padding: 0;
+      cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym64.cur'), auto;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: black;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #ff99ff;
+      font-size: 48px;
+      text-shadow: 2px 2px white;
+    }
+
+    nav {
+      background-color: #ffccff;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: purple;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    section {
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 30px auto;
+      padding: 20px;
+      width: 80%;
+      border: 2px dashed pink;
+    }
+
+    h2 {
+      color: #ff66cc;
+      text-shadow: 1px 1px black;
+    }
+
+    img {
+      width: 200px;
+      border: 4px groove hotpink;
+      margin-top: 10px;
+    }
+
+    .signature {
+      font-size: 18px;
+      font-style: italic;
+      color: violet;
+      margin-top: 15px;
+    }
+
+    .blink {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% {opacity: 1;}
+      50% {opacity: 0;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 class="blink">~*~ Le blog de Nana ~*~</h1>
+</header>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#chats">Chats</a>
+  <a href="#mode">Mode</a>
+  <a href="#art">Art</a>
+</nav>
+
+<section id="accueil">
+  <h2>Bienvenue sur le fan blog de Nana</h2>
+  <p>Coucou toi ! Ici c’est c'est le&nbsp; monde de Nana &nbsp;&nbsp;</p>
+  <p>Si tu ne connais pas Nana, laisse moi te dire qui elle est..</p>
+  <p>Nana c'est une stars que le monde ne connait pas encore, elle aspire pas à etre connus mais si elle l'était le monde ne tournerai qu'autour d'elle parce que cette femme est tout simplement incroyable, elle pourrait révolutionner le monde la mode ou de la musique si elle voulait, de par ces idées et sa vision, c'est une precurseuse de toute les trends, j'ai entendu dire que rihanna et asap rocky se faisait habiller par elle. Et pour cause, c'est LA spécialiste des spécialistes. Elle est pourrait mçme dirigées un pays si elle le voulai, (elle a deja un programme tout prêt pour l'éducation et la santé). Sans oublier qu'elle est incroyablement belle et charismatique ARRGHH cette femme est parfaite regardez svp&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<img src="nana.jpg" alt="chat mignon">
+  <div class="signature">
+    <p>JSPSKSJS N'EST-ELLE PAS GRANDIOSE ???</p>
+    <p>&nbsp;</p>
+<p>&nbsp;</p>
+  </div>
+</section>
+
+<section id="chats">
+  <h2>Rubrique Chats</h2>
+  <p>Les chats c’est sa vie.   .</p>
+  <img src="nana et le chat.jpg" alt="chat gif">
+  <div class="signature">Nana, amoureuse des félins(elle est secretement un félins elle aussi, elle se transforme lorsqu'elle en a marre des humains</div>
+</section>
+
+<section id="mode">
+  <h2>Rubrique Mode</h2>
+  <p>J’adore les jupes plissées, les Doc Martens et les accessoires rose pastel !</p>
+  <img src="https://i.imgur.com/zsYj33T.gif" alt="fashion gif">
+  <div class="signature">Sur le trottoir les fashions !&nbsp;</div>
+</section>
+
+<section id="art">
+  <h2>Rubrique Art</h2>
+  <p>Les dessins&nbsp; de Nana&nbsp;&nbsp;</p>
+  <img src="https://media.tenor.com/qFZ9VZ4XvN0AAAAC/draw-drawing.gif" alt="art gif">
+  <div class="signature">L’art, c’est la vie</div>
+</section>
+
+<!-- Script : alerte de bienvenue -->
+<script>
+  window.onload = function() {
+    alert("Bienvenue sur le blog trop stylé de Nana !");
+  };
+</script>
+
+<!-- Script : pluie d'étoiles -->
+<script>
+  function createStar() {
+    const star = document.createElement("div");
+    star.innerHTML = "★";
+    star.style.position = "fixed";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.top = "-20px";
+    star.style.fontSize = (Math.random() * 24 + 12) + "px";
+    star.style.color = ["hotpink", "gold", "violet", "white"][Math.floor(Math.random() * 4)];
+    star.style.zIndex = 9999;
+    star.style.pointerEvents = "none";
+    document.body.appendChild(star);
+
+    let fall = 0;
+    const speed = Math.random() * 2 + 1;
+
+    function animate() {
+      fall += speed;
+      star.style.top = fall + "px";
+
+      if (fall < window.innerHeight + 20) {
+        requestAnimationFrame(animate);
+      } else {
+        star.remove();
+      }
+    }
+
+    animate();
+  }
+
+  setInterval(createStar, 200);
+</script>
+
+</body>
+</html>
